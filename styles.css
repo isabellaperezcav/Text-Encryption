@@ -10,56 +10,61 @@ body {
 
 .container {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 1000px;
 }
 
 h1 {
     text-align: center;
     color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 .input-output {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    gap: 20px;
 }
 
 textarea {
     width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 150px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
     resize: none;
-    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-textarea#inputText {
-    margin-right: 0;
+textarea#inputText, 
+textarea#outputText {
+    flex-grow: 1;
 }
 
 .output-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-}
-
-textarea#outputText {
-    margin-bottom: 10px;
+    flex-grow: 1;
 }
 
 button {
-    padding: 10px;
+    padding: 8px 15px;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    outline: none;
 }
 
 button:hover {
@@ -67,31 +72,40 @@ button:hover {
 }
 
 #copyButton {
-    margin-top: 10px;
     background-color: #28a745;
+    margin-left: auto;
+    display: none; 
 }
 
 #copyButton:hover {
     background-color: #218838;
 }
 
-@media (min-width: 768px) {
-    .input-output {
-        flex-wrap: nowrap;
-    }
-
-    textarea#inputText {
-        width: 48%;
-        margin-right: 2%;
-    }
-
-    .output-container {
-        width: 48%;
-    }
+.buttons {
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: 10px;
+    gap: 10px;
 }
 
-@media (min-width: 1024px) {
-    textarea {
-        height: 150px;
+@media (max-width: 768px) {
+    .input-output {
+        flex-direction: column;
+    }
+
+    textarea#inputText, 
+    .output-container {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    .buttons button {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
