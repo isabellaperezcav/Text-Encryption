@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptar y Desencriptar Texto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Encriptar y Desencriptar Texto</h1>
+        <div class="input-output">
+            <textarea id="inputText" placeholder="Escribe el texto aquí..."></textarea>
+            <div class="output-container">
+                <textarea id="outputText" readonly placeholder="Resultado..."></textarea>
+                <button id="copyButton" onclick="copyText()">Copiar</button>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="encryptText()">Encriptar</button>
+            <button onclick="decryptText()">Desencriptar</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
